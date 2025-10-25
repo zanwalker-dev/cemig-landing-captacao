@@ -54,10 +54,10 @@ export function HeroCarousel() {
             <div className="flex w-full">
               {/* === SLIDE 1 === */}
               <article className="min-w-0 shrink-0 grow-0 basis-full w-80 h-[331px] md:w-full md:h-80">
-                <div className="grid gap-6 p-0 md:p-0 relative w-full h-full">
-                  <div className="flex flex-col justify-between w-[75%] px-6 py-10">
+                <div className="grid gap-3 lg:gap-6 p-0 md:p-0 relative w-full h-full">
+                  <div className="flex flex-col justify-end md:justify-between md:w-[75%] px-4 md:px-6 py-4 md:py-10">
                     <div>
-                      <p className="text-lg font-extrabold leading-tight text-[#0F6C58] lg:text-2xl xl:text-3xl">
+                      <p className="text-basis font-extrabold leading-tight text-[#0F6C58] lg:text-2xl xl:text-3xl">
                         SEJA UM PARCEIRO ENERGIA LIVRE CEMIG
                       </p>
                       <h1 className="mt-1 lg:text-2xl xl:text-3xl">
@@ -67,14 +67,14 @@ export function HeroCarousel() {
                         <span className="text-foreground">
                           {" "}
                           no Mercado Livre
-                          <br /> de Energia.
+                          <br className="hidden md:block" /> de Energia.
                         </span>
                       </h1>
                     </div>
-                    <div className="mt-6">
+                    <div className="mt-3 md:mt-6">
                       <Button
                         size="lg"
-                        className="px-8 uppercase tracking-wide bg-[#1EFF8C] text-black"
+                        className="px-8 uppercase tracking-wide w-full md:w-fit bg-[#1EFF8C] text-black"
                       >
                         QUERO SER PARCEIRO
                       </Button>
@@ -88,7 +88,16 @@ export function HeroCarousel() {
                     width={600}
                     height={0}
                     alt="Profissional sorrindo usando tablet em ambiente de trabalho"
-                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-80  lg:w-90 md:right-8 md:-bottom-20 -z-10"
+                    className="rounded-xl object-cover absolute overflow-hidden w-40 right-2 md:w-80  lg:w-90 md:right-8 md:-bottom-20 -z-10"
+                    loading="lazy"
+                  />
+                  <img
+                    src="/grafismo/grafismo_baner_1.png"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional sorrindo usando tablet em ambiente de trabalho"
+                    className="rounded-xl object-cover absolute overflow-hidden w-180 right-0 -bottom-10 md:w-80  lg:w-90 md:right-8 md:-bottom-20 -z-20"
                     loading="lazy"
                   />
                 </div>
@@ -96,13 +105,22 @@ export function HeroCarousel() {
 
               {/* === SLIDE 2 === */}
               <article className="min-w-0 shrink-0 grow-0 basis-full w-80 h-[331px] md:w-full md:h-80">
-                <div className="grid gap-6 p-0 md:p-0 relative w-full h-full">
-                  <div className="flex flex-col justify-between w-[75%] px-6 py-10">
+                <div className="grid gap-3 lg:gap-6 p-0 md:p-0 relative w-full h-full">
+                  <div className="flex flex-col justify-end md:justify-between md:w-[75%] px-4 md:px-6 py-4 md:py-10">
                     <div>
-                      <p className="text-[22px] font-extrabold leading-tight text-[#0F6C58] md:text-[34px]">
+                      <p className="text-basis font-extrabold leading-tight text-[#0F6C58] lg:text-2xl xl:text-3xl">
                         CURSO GRATUITO COM EXPERTS DO MERCADO LIVRE DE ENERGIA.
                       </p>
-                      <h1 className="mt-1  md:text-sm lg:text-lg">
+                      <h1 className="mt-1 text-sm lg:text-2xl xl:text-3xl block md:hidden">
+                        <span className="text-foreground">
+                          Domine os fundamentos para
+                        </span>
+                        <span className="text-foreground font-bold">
+                          {" "}
+                          se destacar no mercado livre de energia.
+                        </span>
+                      </h1>
+                      <h1 className="mt-1 text-xs lg:text-2xl xl:text-3xl md:block hidden">
                         <span className="text-foreground font-bold">
                           Domine os fundamentos para se destacar no mercado
                           livre de energia
@@ -114,10 +132,10 @@ export function HeroCarousel() {
                         </span>
                       </h1>
                     </div>
-                    <div className="mt-6">
+                    <div className="mt-3 md:mt-6">
                       <Button
                         size="lg"
-                        className="px-8 uppercase tracking-wide bg-[#1EFF8C] text-black"
+                        className="px-8 uppercase tracking-wide  w-full md:w-fit bg-[#1EFF8C] text-black"
                       >
                         QUERO APRENDER
                       </Button>
