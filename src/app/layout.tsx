@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-// src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 

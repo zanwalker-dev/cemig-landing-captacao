@@ -1,13 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: "export", // gera /out para deploy estático (WordPress)
-  images: {
-    unoptimized: true, // compatível com next export
-  },
-  trailingSlash: true, // facilita uploads em alguns ambientes WP
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export", // gera /out p/ WP
+  images: { unoptimized: true }, // compatível com export
+  trailingSlash: true, // ajuda com uploads/links no WP
   experimental: {
     optimizePackageImports: ["clsx", "tailwind-merge"],
+    // reactCompiler: true, // deixe comentado (decidimos "No" por agora)
   },
 };
 
