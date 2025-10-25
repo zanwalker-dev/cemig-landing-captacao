@@ -5,50 +5,6 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel, { type EmblaOptionsType } from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
 
-type Slide = {
-  id: string;
-  titleTop: string;
-  titleBold: string;
-  titleRest: string;
-  cta: string;
-  imgMobile: string;
-  imgDesktop: string;
-  alt: string;
-};
-
-const slides: Slide[] = [
-  {
-    id: "1",
-    titleTop: "SEJA UM PARCEIRO ENERGIA LIVRE CEMIG",
-    titleBold: "Multiplique seus lucros",
-    titleRest: " no Mercado Livre de Energia.",
-    cta: "QUERO SER PARCEIRO",
-    imgMobile: "/banner/banner_1.png",
-    imgDesktop: "/banner/banner_1.png",
-    alt: "Profissional sorrindo usando tablet em ambiente de trabalho",
-  },
-  {
-    id: "2",
-    titleTop: "SEJA UM PARCEIRO ENERGIA LIVRE CEMIG",
-    titleBold: "Aumente sua renda",
-    titleRest: " com indicações seguras.",
-    cta: "QUERO INDICAR",
-    imgMobile: "/banner/banner_2.png",
-    imgDesktop: "/banner/banner_2.png",
-    alt: "Profissional em escritório com notebook",
-  },
-  {
-    id: "3",
-    titleTop: "SEJA UM PARCEIRO ENERGIA LIVRE CEMIG",
-    titleBold: "Conte com nosso apoio",
-    titleRest: " do começo ao fim.",
-    cta: "QUERO APROVEITAR",
-    imgMobile: "/banner/banner_3.png",
-    imgDesktop: "/banner/banner_3.png",
-    alt: "Pessoa em atendimento recebendo orientação",
-  },
-];
-
 const OPTIONS: EmblaOptionsType = {
   loop: true,
   align: "start",
@@ -85,59 +41,142 @@ export function HeroCarousel() {
   return (
     <section
       aria-label="Destaques"
-      className="border-b border-border bg-background"
+      className="border-b border-border bg-background container"
     >
-      <div className="mx-auto max-w-[1200px] px-4 py-6 md:px-8 md:py-10">
+      <div className="mx-auto max-w-[1200px] flex flex-col justify-center items-center py-6 px-8">
         <div className="relative">
           {/* Viewport */}
           <div
-            className="overflow-hidden rounded-2xl border border-border bg-background/90 shadow-sm"
+            className="overflow-hidden rounded-2xl border border-border bg-background/90 shadow-sm w-80 h-[331px] md:w-full md:h-80"
             ref={emblaRef}
           >
             {/* Container */}
-            <div className="flex">
-              {slides.map((s) => (
-                // Cada slide ocupa 100% da largura (1 por vez)
-                <article
-                  key={s.id}
-                  className="min-w-0 shrink-0 grow-0 basis-full"
-                >
-                  {/* Card interno com grid texto/imagem */}
-                  <div className="grid gap-6 p-0 md:grid-cols-[1.1fr_0.9fr] md:p-0">
-                    <div className="flex flex-col justify-center">
-                      <p className="text-[22px] font-extrabold leading-tight text-secondary md:text-[34px]">
-                        {s.titleTop}
+            <div className="flex w-full">
+              {/* === SLIDE 1 === */}
+              <article className="min-w-0 shrink-0 grow-0 basis-full w-80 h-[331px] md:w-full md:h-80">
+                <div className="grid gap-6 p-0 md:p-0 relative w-full h-full">
+                  <div className="flex flex-col justify-between w-[75%] px-6 py-10">
+                    <div>
+                      <p className="text-lg font-extrabold leading-tight text-[#0F6C58] lg:text-2xl xl:text-3xl">
+                        SEJA UM PARCEIRO ENERGIA LIVRE CEMIG
                       </p>
-                      <h1 className="mt-1 text-[28px] font-black leading-tight md:text-[48px]">
-                        <span className="text-secondary">{s.titleBold}</span>
-                        <span className="text-foreground">{s.titleRest}</span>
+                      <h1 className="mt-1 lg:text-2xl xl:text-3xl">
+                        <span className="text-secondary font-bold">
+                          Multiplique seus lucros
+                        </span>
+                        <span className="text-foreground">
+                          {" "}
+                          no Mercado Livre
+                          <br /> de Energia.
+                        </span>
                       </h1>
-
-                      <div className="mt-6">
-                        <Button
-                          size="lg"
-                          className="px-8 uppercase tracking-wide"
-                        >
-                          {s.cta}
-                        </Button>
-                      </div>
                     </div>
-
-                    <div className="relative">
-                      <img
-                        src={s.imgMobile}
-                        srcSet={`${s.imgMobile} 640w, ${s.imgDesktop} 1280w`}
-                        sizes="(max-width: 768px) 100vw, 45vw"
-                        width={1280}
-                        height={720}
-                        alt={s.alt}
-                        className="h-full w-full rounded-xl object-cover"
-                        loading="lazy"
-                      />
+                    <div className="mt-6">
+                      <Button
+                        size="lg"
+                        className="px-8 uppercase tracking-wide bg-[#1EFF8C] text-black"
+                      >
+                        QUERO SER PARCEIRO
+                      </Button>
                     </div>
                   </div>
-                </article>
-              ))}
+
+                  <img
+                    src="/banner/banner_1.png"
+                    srcSet="/banner/banner_1.png 20w, /banner/banner_1.png 200w"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional sorrindo usando tablet em ambiente de trabalho"
+                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-80  lg:w-90 md:right-8 md:-bottom-20 -z-10"
+                    loading="lazy"
+                  />
+                </div>
+              </article>
+
+              {/* === SLIDE 2 === */}
+              <article className="min-w-0 shrink-0 grow-0 basis-full w-80 h-[331px] md:w-full md:h-80">
+                <div className="grid gap-6 p-0 md:p-0 relative w-full h-full">
+                  <div className="flex flex-col justify-between w-[75%] px-6 py-10">
+                    <div>
+                      <p className="text-[22px] font-extrabold leading-tight text-[#0F6C58] md:text-[34px]">
+                        CURSO GRATUITO COM EXPERTS DO MERCADO LIVRE DE ENERGIA.
+                      </p>
+                      <h1 className="mt-1  md:text-sm lg:text-lg">
+                        <span className="text-foreground font-bold">
+                          Domine os fundamentos para se destacar no mercado
+                          livre de energia
+                        </span>
+                        <span className="text-foreground">
+                          {" "}
+                          e esteja pronto para atuar com confiança e gerar
+                          resultados reais.
+                        </span>
+                      </h1>
+                    </div>
+                    <div className="mt-6">
+                      <Button
+                        size="lg"
+                        className="px-8 uppercase tracking-wide bg-[#1EFF8C] text-black"
+                      >
+                        QUERO APRENDER
+                      </Button>
+                    </div>
+                  </div>
+
+                  <img
+                    src="/banner/banner_2.png"
+                    srcSet="/banner/banner_2.png 20w, /banner/banner_2.png 200w"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-90 md:-right-1 md:-bottom-20 -z-10"
+                    loading="lazy"
+                  />
+                </div>
+              </article>
+
+              {/* === SLIDE 3 === */}
+              <article className="min-w-0 shrink-0 grow-0 basis-full w-80 h-[331px] md:w-full md:h-80">
+                <div className="grid gap-6 p-0 md:p-0 relative w-full h-full">
+                  <div className="flex flex-col justify-between w-[75%] px-6 py-10">
+                    <div>
+                      <p className="text-[22px] font-extrabold leading-tight text-[#0F6C58] md:text-[34px]">
+                        SINAIS DE CONFIANÇA
+                      </p>
+                      <h1 className="mt-1 text-[28px] md:text-basis">
+                        <span className="text-secondary font-bold">
+                          Confira depoimentos de quem já está faturando{" "}
+                        </span>
+                        <span className="text-foreground">
+                          {" "}
+                          com o Mercado Livre de Energia.
+                        </span>
+                      </h1>
+                    </div>
+                    <div className="mt-6">
+                      <Button
+                        size="lg"
+                        className="px-8 uppercase tracking-wide bg-[#1EFF8C] text-black"
+                      >
+                        CONFERIR DEPOIMENTOS
+                      </Button>
+                    </div>
+                  </div>
+
+                  <img
+                    src="/banner/banner_3.png"
+                    srcSet="/banner/banner_3.png 20w, /banner/banner_3.png 200w"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Pessoa em atendimento recebendo orientação"
+                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-90 md:-right-1 md:-bottom-20 -z-10"
+                    loading="lazy"
+                  />
+                </div>
+              </article>
             </div>
           </div>
 
@@ -159,7 +198,7 @@ export function HeroCarousel() {
             <img src="/icons/arrow-right.svg" alt="" width="20" height="20" />
           </button>
 
-          {/* Controles inferiores */}
+          {/* Controles inferiores (play + dots) */}
           <div className="mt-4 flex items-center justify-center gap-4">
             <button
               type="button"
@@ -173,7 +212,7 @@ export function HeroCarousel() {
 
             <nav aria-label="Trocar slide">
               <ul className="flex items-center gap-3">
-                {slides.map((_, i) => (
+                {[0, 1, 2].map((i) => (
                   <li key={i}>
                     <button
                       type="button"
