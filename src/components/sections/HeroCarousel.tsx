@@ -104,12 +104,13 @@ export function HeroCarousel() {
               </article>
 
               {/* === SLIDE 2 === */}
-              <article className="min-w-0 shrink-0 grow-0 basis-full w-80 h-[331px] md:w-full md:h-80">
+              <article className=" min-w-0 shrink-0 grow-0 basis-full w-80 h-[331px] md:w-full md:h-80">
                 <div className="grid gap-3 lg:gap-6 p-0 md:p-0 relative w-full h-full">
                   <div className="flex flex-col justify-end md:justify-between md:w-[75%] px-4 md:px-6 py-4 md:py-10">
                     <div>
                       <p className="text-basis font-extrabold leading-tight text-[#0F6C58] lg:text-2xl xl:text-3xl">
-                        CURSO GRATUITO COM EXPERTS DO MERCADO LIVRE DE ENERGIA.
+                        CURSO GRATUITO COM EXPERTS DO MERCADO
+                        <br className="hidden md:block" /> LIVRE DE ENERGIA.
                       </p>
                       <h1 className="mt-1 text-sm lg:text-2xl xl:text-3xl block md:hidden">
                         <span className="text-foreground">
@@ -120,10 +121,13 @@ export function HeroCarousel() {
                           se destacar no mercado livre de energia.
                         </span>
                       </h1>
-                      <h1 className="mt-1 text-xs lg:text-2xl xl:text-3xl md:block hidden">
+                      <h1 className="mt-1 text-xs lg:text-xl xl:text-3xl md:block hidden">
+                        <span className="text-foreground">
+                          Domine os fundamentos para
+                        </span>
                         <span className="text-foreground font-bold">
-                          Domine os fundamentos para se destacar no mercado
-                          livre de energia
+                          se destacar no mercado livre de energia{" "}
+                          <br className="hidden lg:block xl:hidden" />
                         </span>
                         <span className="text-foreground">
                           {" "}
@@ -149,9 +153,30 @@ export function HeroCarousel() {
                     width={600}
                     height={0}
                     alt="Profissional em escritório com notebook"
-                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-90 md:-right-1 md:-bottom-20 -z-10"
+                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-75 xl:w-90 md:-right-1 md:-bottom-6 -z-10"
                     loading="lazy"
                   />
+
+                  <img
+                    src="/grafismo/grafismo_banner_2_mobile.png"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className="rounded-xl object-cover absolute overflow-hidden left-0 bottom-0 w-70 md:w-90 md:-right-1 md:-bottom-20 -z-10"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="/grafismo/mancha_banner_2_mobile.svg"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className="rounded-xl object-cover absolute overflow-hidden left-28 bottom-34 w-30 md:w-90 md:-right-1 md:-bottom-20 -z-20"
+                    loading="lazy"
+                  />
+                  <div className="inset-0 bg-[#F4F5F4] absolute -z-40"></div>
                 </div>
               </article>
 
