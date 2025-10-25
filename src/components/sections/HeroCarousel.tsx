@@ -163,7 +163,17 @@ export function HeroCarousel() {
                     width={600}
                     height={0}
                     alt="Profissional em escritório com notebook"
-                    className="rounded-xl object-cover absolute overflow-hidden left-0 bottom-0 w-70 md:w-90 md:-right-1 md:-bottom-20 -z-10"
+                    className="rounded-xl object-cover absolute overflow-hidden left-0 bottom-0 w-70 md:w-90 md:-right-6 md:-bottom-20 -z-10 md:hidden"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="/grafismo/grafismo_banner_2_desktop.svg"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className=" hidden md:block rounded-xl object-cover absolute overflow-hidden md:w-154 md:right-0 md:bottom-0 -z-10 md:-z-20"
                     loading="lazy"
                   />
 
@@ -173,7 +183,7 @@ export function HeroCarousel() {
                     width={600}
                     height={0}
                     alt="Profissional em escritório com notebook"
-                    className="rounded-xl object-cover absolute overflow-hidden left-28 bottom-34 w-30 md:w-90 md:-right-1 md:-bottom-20 -z-20"
+                    className="rounded-xl object-cover absolute overflow-hidden left-28 bottom-34 w-30 md:w-40 md:left-136 md:bottom-4 -z-20 "
                     loading="lazy"
                   />
                   <div className="inset-0 bg-[#F4F5F4] absolute -z-40"></div>
