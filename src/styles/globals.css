@@ -1,79 +1,75 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* ===== shadcn/ui theme – CEMIG ===== */
-@layer base {
-  :root {
-    /* Base / layout */
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
+/* ===== Tema CEMIG (Tailwind v4) ===== */
+/* ===== Tema CEMIG (tokens em HEX) ===== */
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #111827;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+  --color-card: #ffffff;
+  --color-card-foreground: #111827;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+  --color-border: #e5e7eb;
+  --color-input: #e5e7eb;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+  /* CEMIG */
+  --color-primary: #00c853; /* verde */
+  --color-primary-foreground: #ffffff; /* texto sobre o verde */
 
-    /* CEMIG */
-    /* primary = verde CEMIG #00C853  -> hsl(147, 100%, 39%) */
-    --primary: 147 100% 39%;
-    --primary-foreground: 0 0% 100%;
-    /* secondary = verde escuro #003A2B -> hsl(165, 100%, 11%) aprox */
-    --secondary: 165 100% 11%;
-    --secondary-foreground: 0 0% 100%;
+  --color-secondary: #003a2b; /* verde escuro */
+  --color-secondary-foreground: #ffffff;
 
-    /* accents */
-    --accent: 147 100% 90%; /* verde bem claro (para hovers suaves) */
-    --accent-foreground: 165 5% 15%;
+  --color-accent: #c7f9df;
+  --color-accent-foreground: #0f172a;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
 
-    --ring: 147 100% 39%;
-
-    --radius: 0.75rem; /* 12px arredondamento padrão */
-  }
-
-  .dark {
-    --background: 165 100% 6%;
-    --foreground: 0 0% 98%;
-
-    --muted: 165 20% 15%;
-    --muted-foreground: 165 10% 70%;
-
-    --popover: 165 100% 6%;
-    --popover-foreground: 0 0% 98%;
-
-    --card: 165 100% 6%;
-    --card-foreground: 0 0% 98%;
-
-    --border: 165 20% 18%;
-    --input: 165 20% 18%;
-
-    --primary: 147 100% 45%;
-    --primary-foreground: 0 0% 8%;
-
-    --secondary: 165 100% 14%;
-    --secondary-foreground: 0 0% 100%;
-
-    --accent: 147 40% 20%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 40.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --ring: 147 100% 45%;
-  }
+  --color-ring: #00c853;
+  --radius: 12px;
 }
 
-/* foco visível (já tínhamos) */
+/* ===== Aliases utilitários explícitos (garantia) ===== */
+@utility bg-primary {
+  background-color: var(--color-primary);
+}
+@utility text-primary-foreground {
+  color: var(--color-primary-foreground);
+}
+@utility bg-secondary {
+  background-color: var(--color-secondary);
+}
+@utility text-secondary-foreground {
+  color: var(--color-secondary-foreground);
+}
+@utility border-border {
+  border-color: var(--color-border);
+}
+@utility bg-background {
+  background-color: var(--color-background);
+}
+@utility text-foreground {
+  color: var(--color-foreground);
+}
+@utility bg-muted {
+  background-color: var(--color-muted);
+}
+@utility text-muted-foreground {
+  color: var(--color-muted-foreground);
+}
+
+/* Gradiente que já estava ok */
+@utility bg-cemig-gradient {
+  background: linear-gradient(180deg, #b8ffda 0%, #00c853 100%);
+}
+
+/* foco visível */
 :focus-visible {
-  outline: 2px solid hsl(var(--ring));
+  outline: 2px solid var(--color-ring);
   outline-offset: 2px;
 }

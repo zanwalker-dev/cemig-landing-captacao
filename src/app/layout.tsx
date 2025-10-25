@@ -41,7 +41,9 @@ export default function RootLayout({
 
         <Header />
 
-        <main id="conteudo">{children}</main>
+        <main id="conteudo" className="flex flex-col items-center">
+          {children}
+        </main>
 
         <Footer />
       </body>

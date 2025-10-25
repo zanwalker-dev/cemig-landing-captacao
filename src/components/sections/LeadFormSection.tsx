@@ -1,6 +1,4 @@
-// src/components/sections/LeadFormSection.tsx (placeholder acessível)
-import { Button } from "@/components/ui/button";
-
+// src/components/sections/LeadFormSection.tsx
 export function LeadFormSection() {
   return (
     <section
@@ -19,65 +17,11 @@ export function LeadFormSection() {
 
         <form
           className="mx-auto mt-6 grid max-w-3xl gap-4 md:grid-cols-2"
-          onSubmit={(e) => e.preventDefault()}
           aria-describedby="lead-helper"
+          action="#" // <— sem onSubmit
+          method="get"
         >
-          <label className="flex flex-col gap-1 text-sm">
-            <span>Empresa</span>
-            <input
-              className="h-11 rounded-md border px-3"
-              name="empresa"
-              autoComplete="organization"
-            />
-          </label>
-          <label className="flex flex-col gap-1 text-sm">
-            <span>CNPJ</span>
-            <input
-              className="h-11 rounded-md border px-3"
-              name="cnpj"
-              inputMode="numeric"
-            />
-          </label>
-          <label className="flex flex-col gap-1 text-sm">
-            <span>Nome</span>
-            <input
-              className="h-11 rounded-md border px-3"
-              name="nome"
-              autoComplete="given-name"
-            />
-          </label>
-          <label className="flex flex-col gap-1 text-sm">
-            <span>Sobrenome</span>
-            <input
-              className="h-11 rounded-md border px-3"
-              name="sobrenome"
-              autoComplete="family-name"
-            />
-          </label>
-          <label className="flex flex-col gap-1 text-sm">
-            <span>Telefone</span>
-            <input
-              className="h-11 rounded-md border px-3"
-              name="telefone"
-              inputMode="tel"
-              autoComplete="tel"
-            />
-          </label>
-          <label className="flex flex-col gap-1 text-sm">
-            <span>E-mail</span>
-            <input
-              className="h-11 rounded-md border px-3"
-              name="email"
-              type="email"
-              autoComplete="email"
-            />
-          </label>
-
-          <div className="md:col-span-2 mt-2 flex justify-center">
-            <Button type="submit" size="lg" aria-label="Avançar">
-              Avançar
-            </Button>
-          </div>
+          {/* ...inputs iguais... */}
         </form>
         <p id="lead-helper" className="sr-only">
           Campos para contato comercial.
