@@ -48,7 +48,7 @@ export function TrustSignalsSection() {
   return (
     <section
       aria-labelledby="trust-title"
-      className="bg-[#F3F6F5] overflow-x-hidden"
+      className="bg-[#F3F6F5] w-full overflow-x-hidden"
     >
       <div className="mx-auto max-w-[1200px] px-4 py-12 md:px-8 md:py-16 container">
         {/* Cabeçalho ESTÁTICO */}
@@ -123,18 +123,8 @@ export function TrustSignalsSection() {
 
               {/* === SLIDE 2 — Sheila / Economia Inteligente === */}
               <article className="min-w-0 shrink-0 grow-0 basis-full">
-                <div className="flex flex-col items-start gap-6 md:grid-cols-[0.44fr_0.56fr] md:gap-10">
+                <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-10">
                   {/* logo (pode ajustar quando tiver a logo correta) */}
-                  <div className="flex items-center justify-center">
-                    <img
-                      src="/logos/solar_power.png"
-                      alt="Solar Power Energy"
-                      width="200"
-                      height="0"
-                      className="h-auto w-[180px] md:w-[360px]"
-                      loading="lazy"
-                    />
-                  </div>
 
                   {/* quote */}
                   <div className="text-[16px] leading-7 text-foreground/90 md:text-[18px]">
@@ -147,7 +137,7 @@ export function TrustSignalsSection() {
                         alt="Solar Power Energy"
                         width="200"
                         height="0"
-                        className="h-auto w-9 md:w-[360px]"
+                        className="h-auto w-9 md:w-[38px]"
                         loading="lazy"
                       />
                     </div>
