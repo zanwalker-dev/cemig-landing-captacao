@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next";
 import "../styles/globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { RevealOnScroll } from "@/components/utils/RevealOnScroll";
 
 export const metadata: Metadata = {
   title: "Energia Livre Cemig — Seja Parceiro",
@@ -46,6 +47,7 @@ export default function RootLayout({
         </main>
 
         <Footer />
+        <RevealOnScroll />
       </body>
     </html>
   );

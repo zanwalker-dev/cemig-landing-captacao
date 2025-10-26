@@ -3,7 +3,7 @@ import React from "react";
 export function AchievementsSection() {
   return (
     <section
-      aria-labelledby="achievements-title"
+      aria-labelledby="achievements-title js-reveal reveal [--reveal-delay:300ms]"
       className="relative overflow-hidden w-full"
     >
       <div className="mx-auto max-w-[1200px] px-4 py-12 md:px-8 md:py-16 container">

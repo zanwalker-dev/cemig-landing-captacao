@@ -59,7 +59,7 @@ export function FAQSection() {
   return (
     <section
       aria-labelledby="faq-title"
-      className="relative overflow-hidden w-full"
+      className="relative overflow-hidden w-full js-reveal reveal [--reveal-delay:300ms]"
     >
       <div className="mx-auto max-w-[1120px] px-4 py-12 md:px-8 md:py-16 container">
         <h2

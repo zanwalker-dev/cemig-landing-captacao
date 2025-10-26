@@ -48,7 +48,7 @@ export function TrustSignalsSection() {
   return (
     <section
       aria-labelledby="trust-title"
-      className="bg-[#F3F6F5] w-full overflow-x-hidden"
+      className="bg-[#F3F6F5] w-full overflow-x-hidden js-reveal reveal [--reveal-delay:300ms]"
     >
       <div className="mx-auto max-w-[1200px] px-4 py-12 md:px-8 md:py-16 container">
         {/* Cabeçalho ESTÁTICO */}

@@ -52,7 +52,10 @@ export function HeroCarousel() {
   const scrollTo = useCallback((i: number) => embla?.scrollTo(i), [embla]);
 
   return (
-    <section aria-label="Destaques" className="  container">
+    <section
+      aria-label="Destaques"
+      className="container js-reveal reveal [--reveal-delay:0ms]"
+    >
       <div className="mx-auto max-w-[1200px] flex flex-col justify-center items-center py-6 px-8">
         <div className="relative">
           {/* Viewport */}

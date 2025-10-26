@@ -4,7 +4,7 @@ export function LeadFormSection() {
   return (
     <section
       aria-labelledby="lead-title"
-      className="relative overflow-x-hidden w-full"
+      className="relative overflow-x-hidden w-full js-reveal reveal [--reveal-delay:300ms]"
       style={{
         // gradiente próximo ao Figma (ajuste se quiser)
         backgroundImage:
