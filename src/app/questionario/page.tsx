@@ -7,19 +7,10 @@ export const metadata = {
 
 export default function QuestionarioPage() {
   return (
-    <main className="min-h-screen bg-white text-[#1B2F2A]">
+    <main className="min-h-screen text-[#1B2F2A] w-full">
       {/* Conteúdo */}
-      <section className="relative">
-        {/* grafismo leve (opcional) */}
-        <img
-          src="/grafismos/semicircle-right.svg"
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-28 hidden h-[620px] max-w-none md:block"
-          loading="lazy"
-        />
-
-        <div className="mx-auto w-full max-w-[960px] px-4 py-8 md:px-6 md:py-10">
+      <section className="relative overflow-hidden w-full">
+        <div className="mx-auto w-full max-w-[960px] px-4 py-8 md:px-6 md:py-10 container">
           <form
             action="/questionario/sucesso/"
             method="get"
@@ -194,6 +185,22 @@ export default function QuestionarioPage() {
             </div>
           </form>
         </div>
+
+        {/* grafismo leve (opcional) */}
+        <img
+          src="/grafismo/grafismo-bg-1.svg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-30 xl:-right-10 top-80 h-[290px] xl:h-[500px] max-w-none -z-20"
+          loading="lazy"
+        />
+        <img
+          src="/grafismo/circle-graphism.svg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-30 xl:-left-20 bottom-100 h-[280px] xl:h-[490px] -z-30 max-w-none "
+          loading="lazy"
+        />
       </section>
     </main>
   );
@@ -208,20 +215,34 @@ function Radio({ name, options }: RadioProps) {
       {options.map((label, i) => {
         const id = `${name}-${i}`;
         return (
-          <li key={id} className="flex items-start gap-3">
-            <input
-              type="radio"
-              id={id}
-              name={name}
-              value={label}
-              className="mt-[3px] h-4 w-4 cursor-pointer appearance-none rounded-full border border-[#2A3D39]/50 outline-none ring-1 ring-transparent transition checked:border-[#0F6C58] checked:bg-[#0F6C58] focus-visible:ring-2 focus-visible:ring-[#0F6C58]/40"
-              required={i === 0}
-            />
+          <li key={id}>
+            {/* Label cobre a linha inteira -> toque fácil no mobile */}
             <label
               htmlFor={id}
-              className="cursor-pointer text-[14px] leading-6 md:text-[15px]"
+              className="flex cursor-pointer items-start gap-3"
             >
-              {label}
+              <input
+                id={id}
+                name={name}
+                type="radio"
+                value={label}
+                className={[
+                  "my-auto",
+                  "h-4 w-4",
+                  "aspect-square",
+                  "shrink-0",
+                  "rounded-full",
+                  "appearance-none",
+                  "border border-[#2A3D39]/50",
+                  "checked:border-[#0F6C58] checked:bg-[#0F6C58]",
+                  "outline-none ring-1 ring-transparent",
+                  "transition focus-visible:ring-2 focus-visible:ring-[#0F6C58]/40",
+                ].join(" ")}
+                required={i === 0}
+              />
+              <span className="text-[14.5px] leading-6 md:text-[15px]">
+                {label}
+              </span>
             </label>
           </li>
         );
