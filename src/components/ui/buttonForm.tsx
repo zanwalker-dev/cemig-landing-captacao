@@ -6,13 +6,13 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: "sm" | "md" | "lg";
 };
 
-export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
+export const ButtonForm = forwardRef<HTMLButtonElement, Props>(function Button(
   { variant = "default", size = "md", className = "", ...props },
   ref
 ) {
   const base =
     "inline-flex items-center justify-center rounded-full font-medium transition-colors " +
-    "focus-visible:outline-none bg-[#1EFF8C] hover:bg-[#C4FF3F] cursor-pointer text-black focus-visible:ring-2 focus-visible:ring-primary " +
+    "focus-visible:outline-none bg-[#0F6C58] hover:brightness-110 cursor-pointer text-black focus-visible:ring-2 focus-visible:ring-primary " +
     "disabled:opacity-50 disabled:pointer-events-none";
 
   const v =
