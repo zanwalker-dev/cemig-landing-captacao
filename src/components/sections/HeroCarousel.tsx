@@ -163,12 +163,14 @@ export function HeroCarousel() {
                       </h1>
                     </div>
                     <div className="mt-3 md:mt-6">
-                      <Button
-                        size="lg"
-                        className="px-8 uppercase tracking-wide  w-full md:w-fit bg-[#1EFF8C] text-black"
-                      >
-                        QUERO APRENDER
-                      </Button>
+                      <a href="/questionario">
+                        <Button
+                          size="lg"
+                          className="px-8 uppercase tracking-wide  w-full md:w-fit bg-[#1EFF8C] text-black"
+                        >
+                          QUERO APRENDER
+                        </Button>
+                      </a>
                     </div>
                   </div>
 
@@ -239,12 +241,14 @@ export function HeroCarousel() {
                       </h1>
                     </div>
                     <div className="mt-3 md:mt-6">
-                      <Button
-                        size="lg"
-                        className="px-8 uppercase tracking-wide w-full md:w-fit"
-                      >
-                        CONFERIR DEPOIMENTOS
-                      </Button>
+                      <a href="/questionario">
+                        <Button
+                          size="lg"
+                          className="px-8 uppercase tracking-wide w-full md:w-fit"
+                        >
+                          CONFERIR DEPOIMENTOS
+                        </Button>
+                      </a>
                     </div>
                   </div>
 
