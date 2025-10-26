@@ -74,7 +74,7 @@ export function HeroCarousel() {
                     <div className="mt-3 md:mt-6">
                       <Button
                         size="lg"
-                        className="px-8 uppercase tracking-wide w-full md:w-fit bg-[#1EFF8C] text-black"
+                        className="px-8 uppercase tracking-wide w-full md:w-fit"
                       >
                         QUERO SER PARCEIRO
                       </Button>
@@ -121,9 +121,9 @@ export function HeroCarousel() {
                           se destacar no mercado livre de energia.
                         </span>
                       </h1>
-                      <h1 className="mt-1 text-xs lg:text-xl xl:text-3xl md:block hidden">
+                      <h1 className="mt-1 text-xs lg:text-xl xl:text-2xl md:block hidden">
                         <span className="text-foreground">
-                          Domine os fundamentos para
+                          Domine os fundamentos para{" "}
                         </span>
                         <span className="text-foreground font-bold">
                           se destacar no mercado livre de energia{" "}
@@ -153,7 +153,7 @@ export function HeroCarousel() {
                     width={600}
                     height={0}
                     alt="Profissional em escritório com notebook"
-                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-75 xl:w-90 md:-right-1 md:-bottom-6 -z-10"
+                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-75 xl:w-80 md:-right-1 xl:right-8 md:-bottom-6 -z-10"
                     loading="lazy"
                   />
 
@@ -183,7 +183,7 @@ export function HeroCarousel() {
                     width={600}
                     height={0}
                     alt="Profissional em escritório com notebook"
-                    className="rounded-xl object-cover absolute overflow-hidden left-28 bottom-34 w-30 md:w-40 md:left-136 md:bottom-4 -z-20 "
+                    className="rounded-xl object-cover absolute overflow-hidden left-28 bottom-34 w-30 md:w-40 lg:w-35 md:left-136 xl:left-172 md:rotate-180 md:bottom-4  -z-20 "
                     loading="lazy"
                   />
                   <div className="inset-0 bg-[#F4F5F4] absolute -z-40"></div>
@@ -193,25 +193,29 @@ export function HeroCarousel() {
               {/* === SLIDE 3 === */}
               <article className="min-w-0 shrink-0 grow-0 basis-full w-80 h-[331px] md:w-full md:h-80">
                 <div className="grid gap-6 p-0 md:p-0 relative w-full h-full">
-                  <div className="flex flex-col justify-between w-[75%] px-6 py-10">
+                  <div className="flex flex-col justify-end md:justify-between md:w-[75%] px-4 md:px-6 py-4 md:py-10">
                     <div>
-                      <p className="text-[22px] font-extrabold leading-tight text-[#0F6C58] md:text-[34px]">
+                      <p className="text-basis font-extrabold leading-tight text-[#0F6C58] lg:text-2xl xl:text-3xl">
                         SINAIS DE CONFIANÇA
                       </p>
-                      <h1 className="mt-1 text-[28px] md:text-basis">
-                        <span className="text-secondary font-bold">
-                          Confira depoimentos de quem já está faturando{" "}
+                      <h1 className="mt-1 lg:text-2xl xl:text-3xl">
+                        <span className="text-foreground">
+                          Confira depoimentos de{" "}
+                        </span>
+                        <span className="text-foreground font-bold">
+                          quem já está faturando{" "}
+                          <br className="hidden lg:block xl:hidden" />
                         </span>
                         <span className="text-foreground">
                           {" "}
-                          com o Mercado Livre de Energia.
+                          com o Mercado Livre de Energia. 
                         </span>
                       </h1>
                     </div>
-                    <div className="mt-6">
+                    <div className="mt-3 md:mt-6">
                       <Button
                         size="lg"
-                        className="px-8 uppercase tracking-wide bg-[#1EFF8C] text-black"
+                        className="px-8 uppercase tracking-wide w-full md:w-fit"
                       >
                         CONFERIR DEPOIMENTOS
                       </Button>
@@ -225,7 +229,17 @@ export function HeroCarousel() {
                     width={600}
                     height={0}
                     alt="Pessoa em atendimento recebendo orientação"
-                    className="rounded-xl object-cover absolute overflow-hidden w-40 md:w-90 md:-right-1 md:-bottom-20 -z-10"
+                    className=" object-cover absolute overflow-hidden w-40 md:w-75 xl:w-80 right-12 md:-right-1 xl:right-8 md:-bottom-6 -z-10"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="/grafismo/grafismo_banner_3_mobile.svg"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className="rounded-xl object-cover absolute overflow-hidden md:w-154 md:right-0 md:bottom-0 -z-10 md:-z-20"
                     loading="lazy"
                   />
                 </div>
