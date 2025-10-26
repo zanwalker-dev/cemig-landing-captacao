@@ -123,19 +123,6 @@ export function StepsSection() {
           </article>
         </div>
       </div>
-
-      <img
-        src="/grafismo/grafismo-bg-1.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-46 -top-40 -z-50 hidden md:block"
-      />
-      <img
-        src="/grafismo/grafismo-bg-1-mobile.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute right-0 -top-40 -z-50 md:hidden"
-      />
     </section>
   );
 }
