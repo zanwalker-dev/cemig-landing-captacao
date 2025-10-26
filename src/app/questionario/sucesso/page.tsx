@@ -7,9 +7,9 @@ export const metadata = {
 
 export default function SucessoPage() {
   return (
-    <main className="min-h-screen w-full overflow-x-clip text-[#1B2F2A]">
+    <main className=" w-full overflow-x-clip text-[#1B2F2A]">
       {/* Hero de confirmação */}
-      <section className="relative w-full overflow-x-hidden">
+      <section className="relative w-full overflow-hidden h-full">
         <div className="container grid max-w-[1200px] items-center gap-4 px-4 py-10 md:grid-cols-2 md:gap-8 md:px-6 md:py-16">
           {/* Foto circular */}
           <div className="order-1">

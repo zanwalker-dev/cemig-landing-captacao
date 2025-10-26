@@ -85,12 +85,14 @@ export function HeroCarousel() {
                       </h1>
                     </div>
                     <div className="mt-3 md:mt-6">
-                      <Button
-                        size="lg"
-                        className="px-8 uppercase tracking-wide w-full md:w-fit"
-                      >
-                        QUERO SER PARCEIRO
-                      </Button>
+                      <a href="/questionario">
+                        <Button
+                          size="lg"
+                          className="px-8 uppercase tracking-wide w-full md:w-fit"
+                        >
+                          QUERO SER PARCEIRO
+                        </Button>
+                      </a>
                     </div>
                   </div>
 
