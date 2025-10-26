@@ -4,32 +4,33 @@ Landing page institucional e página de questionário da **Energia Livre Cemig**
 
 ---
 
-## 🧭 Estrutura do projeto
+## 📁 Estrutura do projeto
 
+```bash
 /
-├─ app/
-│ ├─ page.tsx → Landing page principal
-│ ├─ questionario/page.tsx → Página de questionário (formulário)
-│ ├─ questionario/sucesso/ → Tela de confirmação “enviado com sucesso”
+├── app/
+│   ├── page.tsx                       # Landing page principal
+│   └── questionario/
+│       ├── page.tsx                   # Página do questionário (formulário)
+│       └── sucesso/
+│           └── page.tsx               # Tela de confirmação "enviado com sucesso"
 │
-├─ public/
-│ ├─ banner/ → Banners do carrossel hero
-│ ├─ grafismo/ → SVGs decorativos do layout
-│ ├─ icons/ → Ícones do design
+├── components/
+│   ├── sections/                      # Seções modulares da landing page
+│   └── ui/                            # Componentes base do shadcn/ui
 │
-├─ components/
-│ ├─ sections/ → Seções modulares da landing page
-│ ├─ ui/ → Componentes do shadcn/ui
+├── public/
+│   ├── banner/                        # Banners do carrossel hero
+│   ├── grafismo/                      # SVGs decorativos do layout
+│   └── icons/                         # Ícones do design
 │
-├─ styles/
-│ └─ globals.css → Tailwind + animações + reset
+├── styles/
+│   └── globals.css                    # Tailwind + reset + animações
 │
-├─ tailwind.config.ts
-├─ next.config.mjs → Configuração de build/export estático
-└─ README.md → Este guia
-
-yaml
-Copiar código
+├── tailwind.config.ts                 # Configuração de tema e tokens do Tailwind
+├── next.config.mjs                    # Configuração de build/export estático
+└── README.md                          # Este guia
+```
 
 ---
 
@@ -60,25 +61,27 @@ const nextConfig = {
 };
 
 export default nextConfig;
-🛠️ Como gerar os arquivos estáticos
+```
+
+## 🛠️ Como gerar os arquivos estáticos
 1. Instalar dependências
-bash
-Copiar código
+```bash
 pnpm install
+```
 2. Rodar localmente para conferir
-bash
-Copiar código
+```bash
 pnpm dev
+```
 Acesse: http://localhost:3000
 
 3. Gerar o build estático
-bash
-Copiar código
+```bash
 pnpm build
+```
+
 O Next gerará automaticamente a pasta /out com todos os HTMLs e assets:
 
-pgsql
-Copiar código
+```pgsql
 out/
 ├─ index.html
 ├─ questionario/
@@ -86,19 +89,20 @@ out/
 │  └─ sucesso/
 │     └─ index.html
 └─ _next/
+```
 ⚠️ Não existe mais next export.
 O output: 'export' já gera o conteúdo estático dentro de /out.
 
 4. Visualizar a build localmente
-bash
-Copiar código
+```bash
 npx serve out -p 5050
+```
 Acesse: http://localhost:5050
 
 ⚠️ Use serve out (sem -s) para múltiplas páginas.
 O -s força modo SPA e fará /questionario/ abrir a home.
 
-🌐 Deploy no WordPress
+## 🌐 Deploy no WordPress
 Opção 1 — Upload direto (recomendado)
 Acesse via FTP/SFTP o diretório do seu tema WordPress
 wp-content/themes/seu-tema/.
@@ -109,12 +113,12 @@ Faça upload do conteúdo interno da pasta /out (não a pasta out inteira).
 
 O endereço será:
 
-arduino
-Copiar código
+```arduino
 https://seudominio.com.br/cemig-landing/
 https://seudominio.com.br/cemig-landing/questionario/
 https://seudominio.com.br/cemig-landing/questionario/sucesso/
 Opção 2 — Plugin de arquivos estáticos
+```
 Se o WP usa plugin tipo “Insert HTML Folder” ou “WP File Manager”:
 
 Compacte o conteúdo de /out em .zip;
@@ -123,7 +127,7 @@ Faça upload pelo painel;
 
 O plugin cria automaticamente uma rota pública com os arquivos estáticos.
 
-🔗 Navegação entre páginas
+## 🔗 Navegação entre páginas
 Página	Caminho	Descrição
 Landing page	/index.html	Página principal institucional.
 Questionário	/questionario/index.html	Formulário multiperguntas obrigatório.
@@ -131,11 +135,11 @@ Sucesso	/questionario/sucesso/index.html	Tela de confirmação após envio.
 
 Navegação configurada com links absolutos:
 
-tsx
-Copiar código
+```tsx
 <a href="/questionario/">Ir para o questionário</a>
 <form action="/questionario/sucesso/" method="get">…</form>
-🧱 Regras de design e comportamento
+```
+## 🧱 Regras de design e comportamento
 Mobile-first: estilos base mobile + md: desktop.
 
 Sem margin externa: use padding, gap, space-*.
@@ -148,21 +152,11 @@ Animações suaves: IntersectionObserver + CSS, sem quebrar o export.
 
 Formulário:
 
-Todos os fieldset e radio são required.
-
 O botão ENVIAR redireciona para /questionario/sucesso/.
 
 Pode ser adaptado para POST real (REST WP, Formspree etc).
 
-🧩 Customizações futuras
-Item	Onde alterar
-Cores / tema	tailwind.config.ts (theme.extend.colors)
-Imagens / banners	/public/banner/
-Grafismos	/public/grafismo/
-Ícones	/public/icons/
-Seções / layout	/components/sections/
-
-🧼 Checklist antes do deploy
+## 🧼 Checklist antes do deploy
  Rodar pnpm build sem erros.
 
  Conferir /out abrindo localmente (npx serve out).
@@ -174,4 +168,3 @@ Seções / layout	/components/sections/
  Fazer upload do conteúdo de /out para o WP.
 
  Testar responsividade em desktop e mobile.
-```
