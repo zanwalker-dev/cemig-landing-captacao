@@ -2,7 +2,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel, { type EmblaOptionsType } from "embla-carousel-react";
+import useEmblaCarousel from "embla-carousel-react";
+import type { EmblaOptionsType } from "embla-carousel";
 import { Button } from "@/components/ui/button";
 
 const OPTIONS: EmblaOptionsType = {
@@ -91,13 +92,24 @@ export function HeroCarousel() {
                     className="rounded-xl object-cover absolute overflow-hidden w-40 right-2 md:w-80  lg:w-90 md:right-8 md:-bottom-20 -z-10"
                     loading="lazy"
                   />
+                  {/* GRAFISMO MOBILE */}
                   <img
-                    src="/grafismo/grafismo_baner_1.png"
+                    src="/grafismo/grafismo_banner_1_mobile.svg"
                     sizes="(max-width: 200px) 30vw, 45vw"
                     width={600}
                     height={0}
-                    alt="Profissional sorrindo usando tablet em ambiente de trabalho"
-                    className="rounded-xl object-cover absolute overflow-hidden w-180 right-0 -bottom-10 md:w-80  lg:w-90 md:right-8 md:-bottom-20 -z-20"
+                    alt="Profissional em escritório com notebook"
+                    className="rounded-xl object-cover absolute overflow-hidden right-0 bottom-0 w-70 md:w-90 md:-right-6 md:-bottom-20 -z-20 md:hidden"
+                    loading="lazy"
+                  />
+                  {/* GRAFISMO DESKTOP */}
+                  <img
+                    src="/grafismo/grafismo_banner_1_desktop.svg"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className=" hidden md:block rounded-xl object-cover absolute overflow-hidden md:w-210 md:right-0 md:bottom-0 -z-10 md:-z-20"
                     loading="lazy"
                   />
                 </div>
