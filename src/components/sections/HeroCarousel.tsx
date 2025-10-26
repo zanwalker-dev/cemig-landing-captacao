@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaOptionsType } from "embla-carousel";
 import { Button } from "@/components/ui/button";
+import { Play, Pause } from "lucide-react";
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,
@@ -12,15 +13,27 @@ const OPTIONS: EmblaOptionsType = {
   dragFree: false,
 };
 
+const AUTOPLAY_MS = 4500;
+
 export function HeroCarousel() {
-  const [emblaRef, embla] = useEmblaCarousel(OPTIONS);
+  const [emblaRef, embla] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    dragFree: false,
+  } satisfies EmblaOptionsType);
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Atualiza dots quando slide muda
+  // chave para reiniciar a animação do dot quando muda slide ou play/pause
+  const [progressKey, setProgressKey] = useState(0);
+
   useEffect(() => {
     if (!embla) return;
-    const onSelect = () => setSelectedIndex(embla.selectedScrollSnap());
+    const onSelect = () => {
+      setSelectedIndex(embla.selectedScrollSnap());
+      setProgressKey((k) => k + 1); // reseta o timer do dot
+    };
     embla.on("select", onSelect);
     onSelect();
     return () => {
@@ -28,10 +41,9 @@ export function HeroCarousel() {
     };
   }, [embla]);
 
-  // Play/Pause simples (autoplay)
   useEffect(() => {
     if (!embla || !isPlaying) return;
-    const id = setInterval(() => embla.scrollNext(), 4500);
+    const id = setInterval(() => embla.scrollNext(), AUTOPLAY_MS);
     return () => clearInterval(id);
   }, [embla, isPlaying]);
 
@@ -308,35 +320,72 @@ export function HeroCarousel() {
             <img src="/icons/arrow-right.svg" alt="" width="20" height="20" />
           </button>
 
-          {/* Controles inferiores (play + dots) */}
+          {/* === Controles inferiores (play/pause + dots com timer) === */}
           <div className="mt-4 flex items-center justify-center gap-4">
             <button
               type="button"
-              onClick={() => setIsPlaying((p) => !p)}
+              onClick={() => {
+                setIsPlaying((p) => !p);
+                setProgressKey((k) => k + 1); // reinicia a animação do dot
+              }}
               aria-pressed={isPlaying}
               aria-label={isPlaying ? "Pausar rotação" : "Reproduzir rotação"}
-              className="inline-grid w-fit h-fit place-items-center rounded-full border border-border bg-background text-foreground/80 shadow-sm"
+              className="inline-grid w-9 h-9 place-items-center rounded-full border-3 border-[#0F6C58] bg-background text-foreground/80 shadow-sm"
             >
-              <img src="/icons/play.svg" alt="" width="24" height="24" />
+              {isPlaying ? (
+                <Pause
+                  fill="#0F6C58"
+                  stroke="#0F6C58"
+                  size={18}
+                  strokeWidth={2.5}
+                />
+              ) : (
+                <Play
+                  fill="#0F6C58"
+                  stroke="#0F6C58"
+                  size={18}
+                  strokeWidth={2.5}
+                />
+              )}
             </button>
 
             <nav aria-label="Trocar slide">
-              <ul className="flex items-center gap-3">
-                {[0, 1, 2].map((i) => (
-                  <li key={i}>
-                    <button
-                      type="button"
-                      onClick={() => scrollTo(i)}
-                      aria-current={selectedIndex === i ? "true" : "false"}
-                      aria-label={`Ir para o slide ${i + 1}`}
-                      className={`block h-2 w-2 rounded-full transition ${
-                        selectedIndex === i
-                          ? "bg-foreground/80"
-                          : "bg-foreground/30 hover:bg-foreground/60"
-                      }`}
-                    />
-                  </li>
-                ))}
+              <ul className="flex items-center gap-2">
+                {" "}
+                {/* gap menor, slots fixos */}
+                {[0, 1, 2].map((i) => {
+                  const isActive = selectedIndex === i;
+                  return (
+                    <li key={i} className="dot-wrap">
+                      {isActive ? (
+                        <button
+                          type="button"
+                          onClick={() => scrollTo(i)}
+                          className="dot-pill p-0"
+                          aria-current="true"
+                          aria-label={`Slide ${i + 1} (atual)`}
+                          key={`${progressKey}-${isPlaying}`}
+                        >
+                          <span
+                            className="dot-fill"
+                            style={{
+                              animation: isPlaying
+                                ? `dot-fill ${AUTOPLAY_MS}ms linear forwards`
+                                : "none",
+                            }}
+                          />
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => scrollTo(i)}
+                          aria-label={`Ir para o slide ${i + 1}`}
+                          className="h-2 w-2 rounded-full bg-foreground/30 hover:bg-foreground/60 transition p-0"
+                        />
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </nav>
           </div>

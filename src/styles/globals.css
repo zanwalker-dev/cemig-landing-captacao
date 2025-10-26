@@ -73,3 +73,33 @@
   outline: 2px solid var(--color-ring);
   outline-offset: 2px;
 }
+
+/* === Timer do dot ativo (autoplay) === */
+@keyframes dot-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* pílula de progresso (track + fill) */
+.dot-pill {
+  position: relative;
+  height: 8px;
+  width: 28px; /* pílula alongada como no layout */
+  border-radius: 9999px;
+  background-color: #9ca3af66; /* cinza claro/track */
+  overflow: hidden;
+}
+
+.dot-pill > .dot-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: #0f6c58; /* verde escuro (pode trocar) */
+  transform-origin: left;
+  transform: scaleX(0);
+  /* duração controlada inline pelo componente */
+}
