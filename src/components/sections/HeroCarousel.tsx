@@ -255,12 +255,22 @@ export function HeroCarousel() {
                   {/* DESKTOP GRAFISMOS */}
 
                   <img
-                    src="/grafismo/grafismo_banner_2_desktop.svg"
+                    src="/grafismo/grafismo_banner_3_desktop.svg"
                     sizes="(max-width: 200px) 30vw, 45vw"
                     width={600}
                     height={0}
                     alt="Profissional em escritório com notebook"
-                    className=" hidden md:block rounded-xl object-cover absolute overflow-hidden md:w-154 md:right-0 md:bottom-0 -z-10 md:-z-20"
+                    className=" hidden md:block rounded-xl object-cover absolute overflow-hidden w-147  md:right-16 xl:right-26 md:bottom-0 -z-10 md:-z-20"
+                    loading="lazy"
+                  />
+
+                  <img
+                    src="/grafismo/elipse_banner_3_desktop.svg"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className=" hidden md:block rounded-xl object-cover absolute overflow-hidden md:w-86 xl:w-95  md:right-30 xl:right-40 md:bottom-0 -z-10 md:-z-20"
                     loading="lazy"
                   />
                 </div>
