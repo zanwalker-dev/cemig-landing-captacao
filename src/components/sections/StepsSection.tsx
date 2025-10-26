@@ -5,7 +5,7 @@ export function StepsSection() {
   return (
     <section
       aria-labelledby="steps-title"
-      className="relative container overflow-visible"
+      className="relative container overflow-x-hidden"
     >
       <div className="mx-auto max-w-[1200px] px-4 py-10 md:px-8 md:py-14">
         <h2

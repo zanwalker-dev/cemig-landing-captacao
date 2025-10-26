@@ -21,13 +21,18 @@ export function TrustSignalsSection() {
 
   useEffect(() => {
     if (!embla) return;
+
     const onSelect = () => {
       setSelectedIndex(embla.selectedScrollSnap());
       setProgressKey((k) => k + 1);
     };
+
     embla.on("select", onSelect);
     onSelect();
-    return () => embla.off("select", onSelect);
+
+    return () => {
+      embla.off("select", onSelect);
+    };
   }, [embla]);
 
   useEffect(() => {
@@ -69,9 +74,9 @@ export function TrustSignalsSection() {
             <div className="flex">
               {/* === SLIDE 1 — Solar Power / Ronaldo === */}
               <article className="min-w-0 shrink-0 grow-0 basis-full">
-                <div className="flex flex-col items-start gap-6 md:grid-cols-[0.44fr_0.56fr] md:gap-10">
+                <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-10">
                   {/* logo */}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center w-full">
                     <img
                       src="/logos/solar_power.png"
                       alt="Solar Power Energy"
@@ -93,7 +98,7 @@ export function TrustSignalsSection() {
                         alt="Solar Power Energy"
                         width="200"
                         height="0"
-                        className="h-auto w-9 md:w-[360px]"
+                        className="h-auto w-9 md:w-[38px]"
                         loading="lazy"
                       />
                     </div>
@@ -169,24 +174,6 @@ export function TrustSignalsSection() {
             </div>
           </div>
 
-          {/* setas (opcional – mesmo visual do hero) */}
-          <button
-            type="button"
-            onClick={scrollPrev}
-            aria-label="Anterior"
-            className="absolute -left-4 top-1/2 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-background shadow-md ring-1 ring-border transition hover:opacity-90 md:inline-grid"
-          >
-            <img src="/icons/arrow-left.svg" alt="" width="20" height="20" />
-          </button>
-          <button
-            type="button"
-            onClick={scrollNext}
-            aria-label="Próximo"
-            className="absolute -right-4 top-1/2 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-background shadow-md ring-1 ring-border transition hover:opacity-90 md:inline-grid"
-          >
-            <img src="/icons/arrow-right.svg" alt="" width="20" height="20" />
-          </button>
-
           {/* controles inferiores (play/pause + dots com timer) */}
           <div className="mt-8 flex items-center justify-center gap-4">
             <button
@@ -197,7 +184,7 @@ export function TrustSignalsSection() {
               }}
               aria-pressed={isPlaying}
               aria-label={isPlaying ? "Pausar rotação" : "Reproduzir rotação"}
-              className="inline-grid h-9 w-9 place-items-center rounded-full border border-border bg-background text-foreground/80 shadow-sm"
+              className="inline-grid h-9 w-9 place-items-center rounded-full border-3 border-[#0F6C58] bg-transparent text-foreground/80 shadow-sm"
             >
               {isPlaying ? (
                 <Pause
