@@ -232,14 +232,35 @@ export function HeroCarousel() {
                     className=" object-cover absolute overflow-hidden w-40 md:w-75 xl:w-80 right-12 md:-right-1 xl:right-8 md:-bottom-6 -z-10"
                     loading="lazy"
                   />
-
+                  {/* MOBILE GRAFISMOS */}
                   <img
                     src="/grafismo/grafismo_banner_3_mobile.svg"
                     sizes="(max-width: 200px) 30vw, 45vw"
                     width={600}
                     height={0}
                     alt="Profissional em escritório com notebook"
-                    className="rounded-xl object-cover absolute overflow-hidden md:w-154 md:right-0 md:bottom-0 -z-10 md:-z-20"
+                    className="rounded-xl object-cover absolute overflow-hidden bottom-0 w-72 right-0 md:hidden -z-10"
+                    loading="lazy"
+                  />
+                  <img
+                    src="/grafismo/elipse_banner_3_mobile.svg"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className="rounded-xl object-cover absolute overflow-hidden left-1/2 transform -translate-x-1/2 top-0 w-68 -z-30 md:hidden"
+                    loading="lazy"
+                  />
+
+                  {/* DESKTOP GRAFISMOS */}
+
+                  <img
+                    src="/grafismo/grafismo_banner_2_desktop.svg"
+                    sizes="(max-width: 200px) 30vw, 45vw"
+                    width={600}
+                    height={0}
+                    alt="Profissional em escritório com notebook"
+                    className=" hidden md:block rounded-xl object-cover absolute overflow-hidden md:w-154 md:right-0 md:bottom-0 -z-10 md:-z-20"
                     loading="lazy"
                   />
                 </div>
