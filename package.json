@@ -6,7 +6,7 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "export": "next export",
-    "serve": "serve -s out -l 5050",
+    "serve": "npx serve out -p 5050",
     "lint": "echo \"(lint opcional)\""
   },
   "dependencies": {
