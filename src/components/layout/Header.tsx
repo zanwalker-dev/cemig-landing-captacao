@@ -2,7 +2,7 @@
 // Header minimalista: apenas as marcas, sem navegação.
 export function Header() {
   return (
-    <header className="relative border-b bg-[#0F6C58]  border-zinc-200 shadow-lg z-100">
+    <header className="relative border-b border-zinc-200 shadow-lg z-100">
       <div className="mx-auto max-w-[1200px] px-4 md:px-8 ">
         <div className="flex h-12 items-center justify-between md:h-14">
           {/* Marca "Energia Livre Cemig" à esquerda (sempre visível) */}

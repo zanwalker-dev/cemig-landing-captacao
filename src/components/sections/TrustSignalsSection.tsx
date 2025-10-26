@@ -124,7 +124,17 @@ export function TrustSignalsSection() {
               {/* === SLIDE 2 — Sheila / Economia Inteligente === */}
               <article className="min-w-0 shrink-0 grow-0 basis-full">
                 <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-10">
-                  {/* logo (pode ajustar quando tiver a logo correta) */}
+                  {/* logo */}
+                  <div className="flex items-center justify-center w-full">
+                    <img
+                      src="/logos/economia_inteligente_logo.png"
+                      alt="Economia Inteligente Consultoria"
+                      width="200"
+                      height="0"
+                      className="h-auto w-40 md:w-[200px]"
+                      loading="lazy"
+                    />
+                  </div>
 
                   {/* quote */}
                   <div className="text-[16px] leading-7 text-foreground/90 md:text-[18px]">
