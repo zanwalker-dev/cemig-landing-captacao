@@ -4,7 +4,7 @@ export function AchievementsSection() {
   return (
     <section
       aria-labelledby="achievements-title"
-      className="relative overflow-x-hidden w-full"
+      className="relative overflow-hidden w-full"
     >
       <div className="mx-auto max-w-[1200px] px-4 py-12 md:px-8 md:py-16 container">
         {/* Título + subtítulo */}
@@ -99,13 +99,6 @@ export function AchievementsSection() {
         alt=""
         aria-hidden="true"
         className="pointer-events-none absolute -left-80 top-20 md:-left-20 md:-top-10 -z-10 h-150 max-w-none md:block"
-        loading="lazy"
-      />
-      <img
-        src="/grafismo/semicircle-right.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-[30%] bottom-[-10%] -z-10 hidden h-[560px] max-w-none md:block"
         loading="lazy"
       />
     </section>
