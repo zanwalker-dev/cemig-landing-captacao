@@ -3,18 +3,15 @@ import { Button } from "@/components/ui/button";
 
 export function StepsSection() {
   return (
-    <section
-      aria-labelledby="steps-title"
-      className="relative border-b border-border bg-[#F5F8F7]"
-    >
+    <section aria-labelledby="steps-title" className="relative container">
       <div className="mx-auto max-w-[1200px] px-4 py-10 md:px-8 md:py-14">
         {/* Título principal */}
         <h2
           id="steps-title"
-          className="mx-auto max-w-[980px] text-center text-[26px] font-semibold leading-tight text-foreground md:text-[40px]"
+          className="mx-auto max-w-[980px]  text-center text-[26px] leading-tight text-foreground md:text-[40px]"
         >
           Se você é{" "}
-          <span className="text-secondary font-bold">
+          <span className="font-bold text-[#0F6C58]">
             consultor ou profissional autônomo
           </span>
           ,<br className="hidden md:block" />
@@ -37,9 +34,9 @@ export function StepsSection() {
               />
             </div>
 
-            <h3 className="text-[20px] font-semibold leading-snug text-secondary md:text-[22px]">
+            <h3 className="text-[20px] leading-snug text-[#0F6C58] md:text-[22px]">
               <span className="font-bold">Aprenda tudo</span>{" "}
-              <span className="text-[#4A7A70]">
+              <span className="">
                 sobre o Mercado Livre de Energia, de graça.
               </span>
             </h3>
@@ -69,9 +66,9 @@ export function StepsSection() {
               />
             </div>
 
-            <h3 className="text-[20px] font-semibold leading-snug text-secondary md:text-[22px]">
+            <h3 className="text-[20px] leading-snug text-[#0F6C58] md:text-[22px]">
               <span className="font-bold">Indique</span>{" "}
-              <span className="text-[#4A7A70]">a Energia Livre Cemig.</span>
+              <span className="">a Energia Livre Cemig.</span>
             </h3>
 
             <p className="mt-3 text-[15px] leading-6 text-foreground/80">
@@ -100,7 +97,7 @@ export function StepsSection() {
               />
             </div>
 
-            <h3 className="text-[20px] font-semibold leading-snug text-secondary md:text-[22px]">
+            <h3 className="text-[20px] leading-snug text-[#0F6C58] md:text-[22px]">
               Tenha todo o <span className="font-bold">apoio</span> e as{" "}
               <span className="font-bold">vantagens</span> de ser Energia Livre
               Cemig.
