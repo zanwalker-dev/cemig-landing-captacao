@@ -9,47 +9,68 @@ import {
 
 const faqs = [
   {
-    q: "Preciso ter empresa formalizada?",
+    q: "Quem pode migrar para o Mercado Livre de Energia?",
     a: (
       <>
-        Sim. Para ser parceiro da Energia Livre Cemig é necessário possuir CNPJ
-        ativo, seja como MEI, ME ou outro formato empresarial. Isso garante que
-        você possa emitir notas fiscais, receber comissões e formalizar
-        contratos de parceria de forma segura e transparente.
+        Podem migrar para o Mercado Livre de Energia consumidores conectados em
+        média ou alta tensão, como indústrias, comércios, condomínios e empresas
+        que possuem demanda contratada a partir de 500 kW. A partir de 2024,
+        novas regras permitem que consumidores de menor porte também acessem o
+        mercado, desde que estejam dentro do grupo A de fornecimento (ligados em
+        média tensão) e contratem energia de fontes incentivadas (solar, eólica,
+        biomassa ou pequenas centrais hidrelétricas).
       </>
     ),
   },
   {
-    q: "Qual é o tempo até eu começar a ver resultados?",
+    q: "A migração para o Mercado Livre é segura? ",
     a: (
       <>
-        Os resultados podem ser percebidos rapidamente. Assim que você indica ou
-        fecha seus primeiros contratos, o retorno vem com o pagamento das
-        comissões conforme as regras da Energia Livre Cemig. O tempo depende do
-        ritmo de prospecção e do ciclo de aprovação dos clientes.
+        Sim. A migração é totalmente regulada pela Agência Nacional de Energia
+        Elétrica (ANEEL) e pela Câmara de Comercialização de Energia Elétrica
+        (CCEE), que garantem segurança jurídica e técnica em todo o processo. A
+        Cemig Energia Livre acompanha o cliente em todas as etapas, da análise
+        de viabilidade à operação no mercado, oferecendo suporte técnico e
+        contratos transparentes, sem interrupção no fornecimento de energia.
       </>
     ),
   },
   {
-    q: "Terei custos iniciais?",
+    q: "Como funciona a contratação de energia no Mercado Livre?",
     a: (
       <>
-        Não. Tornar-se parceiro não exige investimento inicial. Todo o material
-        de apoio, treinamentos e suporte comercial são fornecidos gratuitamente
-        pela empresa. Você só precisa dedicar tempo e foco para gerar
-        oportunidades e conversões.
+        No Mercado Livre, o consumidor escolhe de quem comprar a sua energia,
+        negociando preço, prazo e volume diretamente com a comercializadora. Com
+        a Energia Livre Cemig o processo é simples: a equipe faz um diagnóstico
+        de consumo, apresenta uma proposta personalizada e conduz toda a
+        migração junto à distribuidora e à CCEE, garantindo previsibilidade e
+        economia para o cliente.
       </>
     ),
   },
   {
-    q: "Tenho carteira de clientes: como aproveito isso?",
+    q: "Quais são os custos envolvidos na migração?",
     a: (
       <>
-        Essa é a melhor vantagem! Se você já possui uma carteira ativa de
-        empresas, pode oferecer a migração para o Mercado Livre de Energia com o
-        selo Energia Livre Cemig, ampliando sua receita com comissões sobre cada
-        contrato fechado. A equipe da Cemig apoia com materiais, propostas e
-        acompanhamento técnico em cada etapa da venda.
+        Os custos variam conforme o perfil de consumo e o tipo de contrato atual
+        com a distribuidora. Normalmente, o cliente pode ter despesas pontuais
+        com adequações técnicas, adesão à CCEE e eventuais ajustes contratuais.
+        A Cemig Energia Livre orienta o cliente em cada etapa e mostra o custo
+        esperado, ou seja, o tempo de retorno do investimento frente à economia
+        obtida.
+      </>
+    ),
+  },
+  {
+    q: "Quanto tempo leva para migrar para o Mercado Livre?",
+    a: (
+      <>
+        O processo de migração costuma levar cerca de 180 dias, dependendo do
+        cronograma da distribuidora local e da complexidade técnica da unidade
+        consumidora. Com o suporte da Cemig Energia Livre, esse processo é
+        planejado de forma segura, sem riscos de descontinuidade no
+        fornecimento, e com acompanhamento próximo até a ativação completa no
+        mercado.
       </>
     ),
   },
