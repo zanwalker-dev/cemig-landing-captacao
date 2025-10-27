@@ -12,7 +12,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
 ) {
   const base =
     "inline-flex items-center justify-center rounded-full font-medium transition-colors " +
-    "focus-visible:outline-none bg-[#1EFF8C] hover:bg-[#C4FF3F] cursor-pointer text-black focus-visible:ring-2 focus-visible:ring-primary " +
+    "focus-visible:outline-none bg-[#C4FF3F] hover:bg-[#1EFF8C] cursor-pointer text-black focus-visible:ring-2 focus-visible:ring-primary " +
     "disabled:opacity-50 disabled:pointer-events-none";
 
   const v =
