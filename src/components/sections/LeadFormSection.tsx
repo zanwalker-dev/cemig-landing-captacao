@@ -6,9 +6,7 @@ export function LeadFormSection() {
       aria-labelledby="lead-title"
       className="relative overflow-x-hidden w-full js-reveal reveal [--reveal-delay:300ms]"
       style={{
-        // gradiente próximo ao Figma (ajuste se quiser)
-        backgroundImage:
-          "linear-gradient(180deg, #CFFC4B 0%, #30F77E 45%, #12E672 100%)",
+        backgroundImage: "linear-gradient(180deg, #30F77E 0%, #C4FF3F 100%)",
       }}
     >
       <div className="mx-auto max-w-[1120px] px-4 py-12 md:px-8 md:py-16 container">
@@ -60,32 +58,17 @@ export function LeadFormSection() {
               />
             </div>
 
-            {/* Nome */}
+            {/* E-mail */}
             <div className="w-full">
-              <label htmlFor="nome" className="sr-only">
-                Nome
+              <label htmlFor="email" className="sr-only">
+                E-mail
               </label>
               <input
-                id="nome"
-                name="nome"
-                type="text"
-                placeholder="Nome"
-                autoComplete="given-name"
-                className="px-2 h-12 w-full rounded-md border border-white/30 bg-white text-[16px] text-foreground placeholder:text-foreground/60 shadow-[0_1px_0_rgba(0,0,0,0.05)] focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/40"
-              />
-            </div>
-
-            {/* Sobrenome */}
-            <div className="w-full">
-              <label htmlFor="sobrenome" className="sr-only">
-                Sobrenome
-              </label>
-              <input
-                id="sobrenome"
-                name="sobrenome"
-                type="text"
-                placeholder="Sobrenome"
-                autoComplete="family-name"
+                id="email"
+                name="email"
+                type="email"
+                placeholder="E-mail para contato"
+                autoComplete="email"
                 className="px-2 h-12 w-full rounded-md border border-white/30 bg-white text-[16px] text-foreground placeholder:text-foreground/60 shadow-[0_1px_0_rgba(0,0,0,0.05)] focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/40"
               />
             </div>
@@ -99,25 +82,46 @@ export function LeadFormSection() {
                 id="telefone"
                 name="telefone"
                 type="tel"
-                placeholder="Telefone"
+                placeholder="Telefone para contato"
                 autoComplete="tel"
                 className="px-2 h-12 w-full rounded-md border border-white/30 bg-white text-[16px] text-foreground placeholder:text-foreground/60 shadow-[0_1px_0_rgba(0,0,0,0.05)] focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/40"
               />
             </div>
+          </div>
 
-            {/* E-mail */}
-            <div className="w-full">
-              <label htmlFor="email" className="sr-only">
-                E-mail
-              </label>
+          {/* ✅ aceite de privacidade (obrigatório) */}
+          <div className="mt-5 md:mt-6">
+            <div className="flex items-start md:items-center gap-3">
               <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="E-mail"
-                autoComplete="email"
-                className="px-2 h-12 w-full rounded-md border border-white/30 bg-white text-[16px] text-foreground placeholder:text-foreground/60 shadow-[0_1px_0_rgba(0,0,0,0.05)] focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/40"
+                id="aceite-privacidade"
+                name="aceite-privacidade"
+                type="checkbox"
+                required
+                aria-describedby="texto-privacidade"
+                className={[
+                  "mt-0.5 h-4 w-4 shrink-0 rounded-[3px]",
+                  "appearance-none border border-black/40",
+                  "checked:bg-[#0F6C58] checked:border-[#0F6C58]",
+                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6C58]/40",
+                  "transition",
+                ].join(" ")}
               />
+              <p
+                id="texto-privacidade"
+                className="text-xs md:text-sm leading-6 text-foreground/90"
+              >
+                Estou ciente de que os dados pessoais coletados neste formulário
+                serão protegidos e tratados conforme determina a{" "}
+                <a
+                  href="https://www.cemig.com.br/politica-de-privacidade/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline decoration-foreground/30 underline-offset-2 hover:opacity-90"
+                >
+                  Política de Privacidade da Cemig
+                </a>{" "}
+                e a LGPD (Lei 13.709/2018).
+              </p>
             </div>
           </div>
 
@@ -127,7 +131,7 @@ export function LeadFormSection() {
               type="submit"
               className="h-12 w-full rounded-full px-10 text-white md:w-fit md:px-32 text-sm transition-colors"
             >
-              AVANÇAR
+              FALE COM A GENTE
             </ButtonForm>
           </div>
         </form>

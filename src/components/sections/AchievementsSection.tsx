@@ -24,7 +24,7 @@ export function AchievementsSection() {
         <div className="mt-10 grid gap-10 md:mt-14 md:grid-cols-4 md:gap-8">
           {/* 1 */}
           <article className="text-center">
-            <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#66FF9B] md:h-20 md:w-20">
+            <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#C4FF3F] md:h-20 md:w-20">
               <img
                 src="/icons/ach-energia.svg"
                 alt=""
@@ -41,7 +41,7 @@ export function AchievementsSection() {
 
           {/* 2 */}
           <article className="text-center">
-            <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#66FF9B] md:h-20 md:w-20">
+            <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#C4FF3F] md:h-20 md:w-20">
               <img
                 src="/icons/ach-parceria.svg"
                 alt=""
@@ -58,7 +58,7 @@ export function AchievementsSection() {
 
           {/* 3 */}
           <article className="text-center">
-            <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#66FF9B] md:h-20 md:w-20">
+            <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#C4FF3F] md:h-20 md:w-20">
               <img
                 src="/icons/ach-estrela.svg"
                 alt=""
@@ -76,11 +76,11 @@ export function AchievementsSection() {
 
           {/* 4 */}
           <article className="text-center">
-            <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#66FF9B] md:h-20 md:w-20">
+            <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full md:h-20 md:w-20">
               <img
                 src="/icons/rgc_cemig.png"
                 alt="Selo RGC Cemig"
-                className="h-14 w-14 md:h-12 md:w-12"
+                className="h-16 w-16 md:h-20 md:w-20"
                 loading="lazy"
               />
             </div>
