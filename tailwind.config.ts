@@ -62,9 +62,7 @@ export default {
           md: "2rem",
         },
       },
-      fontFamily: {
-        sans: ["ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Arial"],
-      },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

@@ -10,12 +10,13 @@ export function AchievementsSection() {
         {/* Título + subtítulo */}
         <h2
           id="achievements-title"
-          className="text-center text-[32px] font-semibold tracking-tight text-[#2F7A67] md:text-[40px]"
+          className="text-center text-[32px] tracking-tight text-[#2F7A67] md:text-3xl"
         >
           Conquistas
         </h2>
-        <p className="mx-auto mt-3 max-w-[980px] text-center text-[18px] leading-relaxed text-foreground/90 md:text-[22px]">
-          Quando é o seu nome que está em jogo, você precisa contar com um{" "}
+        <p className="mx-auto mt-3 max-w-[980px] text-center text-[18px] leading-relaxed text-foreground/90 md:text-xl">
+          Quando é o seu nome que está em jogo, você precisa contar
+          <br className="hidden md:block" /> com um{" "}
           <span className="font-extrabold">parceiro sólido</span> como a Energia
           Livre Cemig.
         </p>
