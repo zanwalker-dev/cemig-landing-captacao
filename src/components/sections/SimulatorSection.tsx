@@ -22,7 +22,7 @@ export function SimulatorSection() {
       <div className="container mx-auto grid max-w-[1200px] items-center gap-10 px-4 md:grid-cols-2 md:gap-12 md:px-8 py-6 md:py-0">
         {/* Ilustração */}
         <div className={`order-2 ${showResult ? "md:order-2" : "md:order-1"}`}>
-          <div className="hidden md:block mx-auto aspect-square max-w-full w-[80%]">
+          <div className="hidden md:block mx-auto aspect-square max-w-full w-[70%]">
             <img
               src="/banner/simulacao-hero.png"
               alt="Pessoas sorrindo representando economia de energia"
