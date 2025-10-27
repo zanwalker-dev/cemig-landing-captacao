@@ -9,7 +9,7 @@ const openSans = Open_Sans({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "600", "700"],
-  variable: "--font-Opensans",
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={openSans.variable}>
       <body className="min-h-dvh bg-white text-zinc-900 antialiased font-sans">
         <a
           href="#conteudo"
