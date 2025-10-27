@@ -52,7 +52,7 @@ export function SimulatorSection() {
           {!showResult && (
             <form
               onSubmit={onCalculate}
-              className="mt-6 md:mt-8"
+              className="mt-6 md:mt-8 pb-4"
               noValidate
               aria-describedby="simulator-note"
             >
@@ -107,7 +107,7 @@ export function SimulatorSection() {
 
           {/* ===== RESULTADO ===== */}
           {showResult && (
-            <div className="mt-6 md:mt-8" aria-live="polite">
+            <div className="mt-6 md:mt-8 pb-4" aria-live="polite">
               <div className="rounded-xl bg-zinc-100/80 p-5 md:p-6">
                 <p className="text-center text-lg md:text-xl text-[#1B2F2A]/90">
                   Economia de{" "}
@@ -140,7 +140,7 @@ export function SimulatorSection() {
                 </button>
               </div>
 
-              <p className="mt-6 text-[14px] leading-7 text-foreground/80 md:mt-8">
+              <p className="mt-6 text-[14px] text-foreground/80">
                 *A base de cálculo apresentada é apenas uma estimativa. Para
                 obter o valor exato do desconto, preencha nosso formulário.
               </p>
