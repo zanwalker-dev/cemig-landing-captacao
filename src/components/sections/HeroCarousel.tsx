@@ -54,7 +54,7 @@ export function HeroCarousel() {
   return (
     <section
       aria-label="Destaques"
-      className="container js-reveal reveal [--reveal-delay:0ms]"
+      className="container js-reveal reveal [--reveal-delay:0ms] pt-14"
     >
       <div className="mx-auto max-w-[1200px] flex flex-col justify-center items-center py-6 px-8">
         <div className="relative">
