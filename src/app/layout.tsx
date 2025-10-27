@@ -1,5 +1,3 @@
-// src/app/layout.tsx
-// Troque o conteúdo inteiro pelo abaixo (remove o navbar e usa Header/Footer novos)
 import type { Metadata, Viewport } from "next";
 import "../styles/globals.css";
 import { Header } from "@/components/layout/Header";
@@ -7,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { RevealOnScroll } from "@/components/utils/RevealOnScroll";
 
 export const metadata: Metadata = {
-  title: "Energia Livre Cemig — Seja Parceiro",
+  title: "Energia Livre Cemig",
   description:
     "Multiplique seus lucros no Mercado Livre de Energia com a Energia Livre Cemig.",
   openGraph: {

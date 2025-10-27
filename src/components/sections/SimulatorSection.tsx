@@ -7,7 +7,6 @@ export function SimulatorSection() {
 
   function onCalculate(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // aqui futuramente você pode ler os campos e calcular de fato
     setShowResult(true);
   }
 
@@ -21,8 +20,8 @@ export function SimulatorSection() {
       className="relative w-full overflow-hidden"
     >
       <div className="container mx-auto grid max-w-[1200px] items-center gap-10 px-4 md:grid-cols-2 md:gap-12 md:px-8 py-6 md:py-0">
-        {/* Ilustração (esquerda no desktop) */}
-        <div className="order-2 md:order-1">
+        {/* Ilustração */}
+        <div className={`order-2 ${showResult ? "md:order-2" : "md:order-1"}`}>
           <div className="hidden md:block mx-auto aspect-square max-w-full w-[80%]">
             <img
               src="/banner/simulacao-hero.png"
@@ -36,7 +35,7 @@ export function SimulatorSection() {
         </div>
 
         {/* Texto + Formulário / Resultado */}
-        <div className="order-1 md:order-2">
+        <div className={`order-1 ${showResult ? "md:order-1" : "md:order-2"}`}>
           <h2
             id="simulator-title"
             className="text-center text-xl leading-tight text-[#2C7566] md:text-left md:text-3xl"
@@ -58,7 +57,6 @@ export function SimulatorSection() {
               aria-describedby="simulator-note"
             >
               <div className="grid gap-4 md:grid-cols-2 md:gap-5">
-                {/* CEP */}
                 <div className="w-full">
                   <label htmlFor="sim-cep" className="sr-only">
                     CEP
@@ -73,7 +71,6 @@ export function SimulatorSection() {
                   />
                 </div>
 
-                {/* Valor da conta */}
                 <div className="w-full">
                   <label htmlFor="sim-valor" className="sr-only">
                     Valor da conta
@@ -89,7 +86,6 @@ export function SimulatorSection() {
                 </div>
               </div>
 
-              {/* Botão */}
               <div className="mt-6 md:mt-8">
                 <button
                   type="submit"
@@ -99,7 +95,6 @@ export function SimulatorSection() {
                 </button>
               </div>
 
-              {/* Nota */}
               <p
                 id="simulator-note"
                 className="mt-6 text-[14px] leading-7 text-foreground/80 md:mt-8"
@@ -113,7 +108,6 @@ export function SimulatorSection() {
           {/* ===== RESULTADO ===== */}
           {showResult && (
             <div className="mt-6 md:mt-8" aria-live="polite">
-              {/* Card de economia */}
               <div className="rounded-xl bg-zinc-100/80 p-5 md:p-6">
                 <p className="text-center text-lg md:text-xl text-[#1B2F2A]/90">
                   Economia de{" "}
@@ -127,17 +121,15 @@ export function SimulatorSection() {
                 </p>
               </div>
 
-              {/* CTA principal */}
               <div className="mt-6 md:mt-8">
                 <a
-                  href="#lead" /* ajuste para o id do seu formulário de lead */
+                  href="#lead"
                   className="mx-auto block h-fit py-4 w-full rounded-full bg-[#D8FF5E] px-8 text-center text-sm md:text-base font-semibold tracking-wide text-[#0A2E28] transition hover:opacity-95 md:px-30 md:w-fit"
                 >
                   APROVEITAR DESCONTO
                 </a>
               </div>
 
-              {/* CTA secundário */}
               <div className="mt-3 text-center">
                 <button
                   type="button"
@@ -148,7 +140,6 @@ export function SimulatorSection() {
                 </button>
               </div>
 
-              {/* Nota */}
               <p className="mt-6 text-[14px] leading-7 text-foreground/80 md:mt-8">
                 *A base de cálculo apresentada é apenas uma estimativa. Para
                 obter o valor exato do desconto, preencha nosso formulário.
@@ -159,7 +150,6 @@ export function SimulatorSection() {
       </div>
 
       {/* Grafismos */}
-      {/* desktop */}
       <img
         src="/grafismo/circle-graphism.svg"
         alt=""
@@ -167,7 +157,6 @@ export function SimulatorSection() {
         className="pointer-events-none absolute -right-24 top-10 hidden h-[560px] w-auto -translate-y-10 opacity-70 md:block -z-40"
         loading="lazy"
       />
-      {/* mobile */}
       <img
         src="/grafismo/confirmacao-graphism-mobile.svg"
         alt=""
