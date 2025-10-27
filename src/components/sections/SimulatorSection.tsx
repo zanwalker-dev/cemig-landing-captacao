@@ -1,6 +1,20 @@
 "use client";
 
+import { useState } from "react";
+
 export function SimulatorSection() {
+  const [showResult, setShowResult] = useState(false);
+
+  function onCalculate(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    // aqui futuramente você pode ler os campos e calcular de fato
+    setShowResult(true);
+  }
+
+  function onReset() {
+    setShowResult(false);
+  }
+
   return (
     <section
       aria-labelledby="simulator-title"
@@ -21,7 +35,7 @@ export function SimulatorSection() {
           </div>
         </div>
 
-        {/* Texto + Formulário */}
+        {/* Texto + Formulário / Resultado */}
         <div className="order-1 md:order-2">
           <h2
             id="simulator-title"
@@ -35,65 +49,112 @@ export function SimulatorSection() {
             ligadas em média e alta tensão.
           </p>
 
-          {/* Form */}
-          <form
-            action="#"
-            method="get"
-            className="mt-6 md:mt-8"
-            noValidate
-            aria-describedby="simulator-note"
-          >
-            <div className="grid gap-4 md:grid-cols-2 md:gap-5">
-              {/* CEP */}
-              <div className="w-full">
-                <label htmlFor="sim-cep" className="sr-only">
-                  CEP
-                </label>
-                <input
-                  id="sim-cep"
-                  name="cep"
-                  type="text"
-                  inputMode="numeric"
-                  placeholder="CEP"
-                  className="h-14 w-full rounded-md border border-zinc-300 bg-white px-4 text-[16px] text-foreground placeholder:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-[#2C7566]/30"
-                />
-              </div>
-
-              {/* Valor da conta */}
-              <div className="w-full">
-                <label htmlFor="sim-valor" className="sr-only">
-                  Valor da conta
-                </label>
-                <input
-                  id="sim-valor"
-                  name="valor"
-                  type="text"
-                  inputMode="decimal"
-                  placeholder="Valor da conta"
-                  className="h-14 w-full rounded-md border border-zinc-300 bg-white px-4 text-[16px] text-foreground placeholder:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-[#2C7566]/30"
-                />
-              </div>
-            </div>
-
-            {/* Botão */}
-            <div className="mt-6 md:mt-8">
-              <button
-                type="submit"
-                className="mx-auto block h-fit py-4 w-full rounded-full bg-[#D8FF5E] px-8 text-center text-sm md:text-base font-semibold tracking-wide text-[#0A2E28] transition hover:opacity-95 md:px-30 md:w-fit"
-              >
-                CALCULAR
-              </button>
-            </div>
-
-            {/* Nota */}
-            <p
-              id="simulator-note"
-              className="mt-6 text-[14px] leading-7 text-foreground/80 md:mt-8"
+          {/* ===== FORM ===== */}
+          {!showResult && (
+            <form
+              onSubmit={onCalculate}
+              className="mt-6 md:mt-8"
+              noValidate
+              aria-describedby="simulator-note"
             >
-              *A base de cálculo apresentada é apenas uma estimativa. Para obter
-              o valor exato do desconto, preencha nosso formulário.
-            </p>
-          </form>
+              <div className="grid gap-4 md:grid-cols-2 md:gap-5">
+                {/* CEP */}
+                <div className="w-full">
+                  <label htmlFor="sim-cep" className="sr-only">
+                    CEP
+                  </label>
+                  <input
+                    id="sim-cep"
+                    name="cep"
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="CEP"
+                    className="h-14 w-full rounded-md border border-zinc-300 bg-white px-4 text-[16px] text-foreground placeholder:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-[#2C7566]/30"
+                  />
+                </div>
+
+                {/* Valor da conta */}
+                <div className="w-full">
+                  <label htmlFor="sim-valor" className="sr-only">
+                    Valor da conta
+                  </label>
+                  <input
+                    id="sim-valor"
+                    name="valor"
+                    type="text"
+                    inputMode="decimal"
+                    placeholder="Valor da conta"
+                    className="h-14 w-full rounded-md border border-zinc-300 bg-white px-4 text-[16px] text-foreground placeholder:text-foreground/60 focus:outline-none focus:ring-2 focus:ring-[#2C7566]/30"
+                  />
+                </div>
+              </div>
+
+              {/* Botão */}
+              <div className="mt-6 md:mt-8">
+                <button
+                  type="submit"
+                  className="mx-auto block h-fit py-4 w-full rounded-full bg-[#D8FF5E] px-8 text-center text-sm md:text-base font-semibold tracking-wide text-[#0A2E28] transition hover:opacity-95 md:px-30 md:w-fit"
+                >
+                  CALCULAR
+                </button>
+              </div>
+
+              {/* Nota */}
+              <p
+                id="simulator-note"
+                className="mt-6 text-[14px] leading-7 text-foreground/80 md:mt-8"
+              >
+                *A base de cálculo apresentada é apenas uma estimativa. Para
+                obter o valor exato do desconto, preencha nosso formulário.
+              </p>
+            </form>
+          )}
+
+          {/* ===== RESULTADO ===== */}
+          {showResult && (
+            <div className="mt-6 md:mt-8" aria-live="polite">
+              {/* Card de economia */}
+              <div className="rounded-xl bg-zinc-100/80 p-5 md:p-6">
+                <p className="text-center text-lg md:text-xl text-[#1B2F2A]/90">
+                  Economia de{" "}
+                  <strong className="whitespace-nowrap text-[#0F6C58] font-extrabold">
+                    R$ 18.000,00
+                  </strong>{" "}
+                  por ano,
+                </p>
+                <p className="mt-2 text-center text-base md:text-lg text-[#0F6C58]">
+                  <span className="font-semibold">R$1.500</span> por mês.
+                </p>
+              </div>
+
+              {/* CTA principal */}
+              <div className="mt-6 md:mt-8">
+                <a
+                  href="#lead" /* ajuste para o id do seu formulário de lead */
+                  className="mx-auto block h-fit py-4 w-full rounded-full bg-[#D8FF5E] px-8 text-center text-sm md:text-base font-semibold tracking-wide text-[#0A2E28] transition hover:opacity-95 md:px-30 md:w-fit"
+                >
+                  APROVEITAR DESCONTO
+                </a>
+              </div>
+
+              {/* CTA secundário */}
+              <div className="mt-3 text-center">
+                <button
+                  type="button"
+                  onClick={onReset}
+                  className="text-[#2C7566] text-sm md:text-base font-semibold underline decoration-[#2C7566]/30 underline-offset-2 hover:opacity-90"
+                >
+                  FAZER OUTRA SIMULAÇÃO
+                </button>
+              </div>
+
+              {/* Nota */}
+              <p className="mt-6 text-[14px] leading-7 text-foreground/80 md:mt-8">
+                *A base de cálculo apresentada é apenas uma estimativa. Para
+                obter o valor exato do desconto, preencha nosso formulário.
+              </p>
+            </div>
+          )}
         </div>
       </div>
 
